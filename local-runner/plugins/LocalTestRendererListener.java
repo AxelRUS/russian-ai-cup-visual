@@ -301,7 +301,6 @@ public final class LocalTestRendererListener {
     }
     
     enum SyncMode {DISABLED, ENABLED, AUTO};
-    private static final String LOCAL_STRATEGY_NAME = "MyStrategy";
 
     private Graphics graphics;
     private World world;
@@ -393,7 +392,7 @@ public final class LocalTestRendererListener {
         		doSync = SyncMode.ENABLED;
         		for (int i = 0; i < world.getPlayers().length; i++)
         		{
-        			if (world.getPlayers()[i].getName().startsWith(LOCAL_STRATEGY_NAME))
+        			if (world.getPlayers()[i].isMe())
         			{
         				doSync = SyncMode.DISABLED;
         				break;
